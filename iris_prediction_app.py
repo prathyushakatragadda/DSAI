@@ -28,6 +28,7 @@ def user_input_features():
     return features
 
 df = user_input_features()
+df = df.astype("float64")
 
 st.subheader('User Input parameters')
 st.write(df)
@@ -42,3 +43,4 @@ proba_df = pd.DataFrame(prediction_proba, columns=iris.target_names)
 st.write(proba_df)
 
 st.write(f"Class predicted is: {iris.target_names[prediction]}")
+
